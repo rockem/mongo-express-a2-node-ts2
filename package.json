@@ -10,6 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/rockem/mongo-express-a2-node-ts2.git"
+  },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
     "@types/chai": "^3.4.34",
