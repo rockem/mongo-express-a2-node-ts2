@@ -2,7 +2,8 @@ import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
-import GreetingRouter from './routes/GreetingRouter';
+import NamesRouter from './routes/ItemsRouter';
+import Name from './routes/ItemsRouter'
 
 // Creates and configures an ExpressJS web server.
 class server {
@@ -37,7 +38,7 @@ class server {
       });
     });
     this.express.use('/', router);
-    this.express.use('/api/v1/greeting', GreetingRouter);
+    this.express.use('/api/v1/items', NamesRouter);
   }
 
 }
