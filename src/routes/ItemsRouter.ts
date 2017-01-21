@@ -1,28 +1,34 @@
 import {Router, Request, Response, NextFunction} from "express";
+import * as item from "./Item";
 
 export class ItemsRouter {
     router: Router;
-    items: any[] = [];
 
     constructor() {
         this.router = Router();
         this.init();
-        this.items = [];
     }
 
     public init() {
         this.router.get('/', this.getAll);
         this.router.post('/', this.add);
+        this.router.delete('/', this.deleteAll)
     }
 
     public getAll = (req: Request, res: Response, next: NextFunction) => {
-        res.send(200, this.items)
+        item.Item.find({}).exec((err, result) => {
+           res.send(200, result)
+        });
     };
 
     public add = (req: Request, res: Response, next: NextFunction) => {
-        this.items.push({name: req.body.value});
+        new item.Item({title: req.body.value}).save();
         res.send(201);
-    }
+    };
+
+    public deleteAll = (req: Request, res: Response, next: NextFunction) => {
+        res.send(200)
+    };
 
 }
 
