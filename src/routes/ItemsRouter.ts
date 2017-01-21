@@ -23,11 +23,13 @@ export class ItemsRouter {
 
     public add = (req: Request, res: Response, next: NextFunction) => {
         new item.Item({title: req.body.value}).save();
-        res.send(201);
+        res.sendStatus(201);
     };
 
     public deleteAll = (req: Request, res: Response, next: NextFunction) => {
-        res.send(200)
+        item.Item.remove({}, () => {
+            res.sendStatus(200);
+        });
     };
 
 }
