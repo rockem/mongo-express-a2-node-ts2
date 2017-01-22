@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from "express";
-import * as item from "./Item";
+import {Item} from "./Item";
 
 export class ItemsRouter {
     router: Router;
@@ -16,18 +16,18 @@ export class ItemsRouter {
     }
 
     public getAll = (req: Request, res: Response, next: NextFunction) => {
-        item.Item.find({}).exec((err, result) => {
+        Item.find({}).exec((err, result) => {
            res.send(200, result)
         });
     };
 
     public add = (req: Request, res: Response, next: NextFunction) => {
-        new item.Item({title: req.body.value}).save();
+        new Item({title: req.body.value}).save();
         res.sendStatus(201);
     };
 
     public deleteAll = (req: Request, res: Response, next: NextFunction) => {
-        item.Item.remove({}, () => {
+        Item.remove({}, () => {
             res.sendStatus(200);
         });
     };

@@ -1,8 +1,6 @@
 import mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/test');
-
-var _schema: mongoose.Schema = new mongoose.Schema({
+let _schema: mongoose.Schema = new mongoose.Schema({
     id: {
         type: String,
         require: true
@@ -12,7 +10,7 @@ var _schema: mongoose.Schema = new mongoose.Schema({
     },
 });
 
-export var Item = mongoose.model('Item', _schema);
+export let Item = mongoose.model('Item', _schema);
 
 
 

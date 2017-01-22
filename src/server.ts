@@ -1,9 +1,7 @@
-import * as path from 'path';
-import * as express from 'express';
-import * as logger from 'morgan';
-import * as bodyParser from 'body-parser';
-import NamesRouter from './routes/ItemsRouter';
-import Name from './routes/ItemsRouter'
+import * as express from "express";
+import * as logger from "morgan";
+import * as bodyParser from "body-parser";
+import NamesRouter from "./routes/ItemsRouter";
 
 // Creates and configures an ExpressJS web server.
 class server {
