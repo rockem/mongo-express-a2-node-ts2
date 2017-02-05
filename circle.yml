@@ -3,7 +3,7 @@ dependencies:
     - node_modules
   override:
     - npm prune && npm install
-    - gulp build
+    - npm run build
 
 test:
   override:
