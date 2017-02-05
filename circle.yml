@@ -7,5 +7,5 @@ dependencies:
 
 test:
   override:
-    - npm mocha
-    - npm e2e
+    - npm run mocha
+    - npm run e2e
