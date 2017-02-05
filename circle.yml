@@ -1,0 +1,11 @@
+dependencies:
+  cache_directories:
+    - node_modules
+  override:
+    - npm prune && npm install
+    - gulp build
+
+test:
+  override:
+    - npm mocha
+    - npm e2e
