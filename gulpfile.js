@@ -38,6 +38,6 @@ gulp.task('watch', ['scripts', 'app_resources', 'e2e'], () => {
     gulp.watch('e2e/**/*.ts', ['e2e']);
 });
 
-gulp.task('build', ['libs', 'scripts', 'app_resources']);
+gulp.task('build', ['libs', 'scripts', 'app_resources', 'e2e']);
 
 gulp.task('default', ['watch']);
