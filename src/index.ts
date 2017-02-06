@@ -4,7 +4,7 @@ import * as debug from 'debug';
 import App from './server';
 import mongoose = require('mongoose')
 
-mongoose.connect((process.env.MONGO_DB || 'mongodb://localhost') + '/chklst');
+mongoose.connect((process.env.MONGODB_URL || 'mongodb://localhost') + '/chklst');
 
 debug('ts-express:server');
 

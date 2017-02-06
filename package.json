@@ -9,6 +9,7 @@
     "build": "gulp build",
     "pree2e": "webdriver-manager update",
     "e2e": "concurrently \"npm run start\" \"protractor e2e/tmp/protractor.config.js\" --kill-others --success first"
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",

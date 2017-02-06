@@ -1,8 +1,6 @@
 const gulp = require('gulp');
 const del = require("del");
 const ts = require('gulp-typescript');
-const gulpCopy = require('gulp-copy');
-// pull in the project TypeScript config
 const tsProject = ts.createProject('tsconfig.json');
 const tsE2E = ts.createProject('e2e/tsconfig.json');
 

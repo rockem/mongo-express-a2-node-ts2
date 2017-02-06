@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    environment:
+        - MONGODB_URL=mongodb://mongo:27017/chklst
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
