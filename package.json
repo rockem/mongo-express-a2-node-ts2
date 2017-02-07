@@ -6,17 +6,16 @@
     "npm": "3.10.10"
   },
   "description": "Example project",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "mocha": "mocha --reporter spec --compilers ts:ts-node/register spec/**/*.spec.ts",
-    "build": "gulp build",
     "pree2e": "webdriver-manager update",
-    "e2e": "concurrently \"npm run start\" \"protractor e2e/tmp/protractor.config.js\" --kill-others --success first",
-    "postinstall": "npm run build"
+    "e2e": "concurrently \"PORT=3001 npm run start\" \"protractor e2e/tmp/protractor.config.js\" --kill-others --success first",
+    "postinstall": "gulp build"
   },
   "keywords": [],
-  "author": "",
+  "author": "MaSoft",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -41,6 +40,10 @@
     "protractor": "~4.0.14",
     "reflect-metadata": "^0.1.9",
     "ts-node": "^2.0.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-typescript": "^3.1.4",
     "tsc": "^1.20150623.0",
     "typescript": "^2.1.4"
   },
@@ -61,10 +64,6 @@
     "morgan": "^1.7.0",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
-    "zone.js": "^0.7.4",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-copy": "^1.0.0",
-    "gulp-typescript": "^3.1.4"
+    "zone.js": "^0.7.4"
   }
 }

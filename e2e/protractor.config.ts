@@ -9,6 +9,6 @@ export let config: Config = {
 
     framework: 'jasmine',
 
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3001',
     specs: ['*e2e-spec.js']
 };
