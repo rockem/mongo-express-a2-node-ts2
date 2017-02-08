@@ -10,5 +10,9 @@ export let config: Config = {
     framework: 'jasmine',
 
     baseUrl: 'http://localhost:3001',
-    specs: ['*e2e-spec.js']
+    specs: ['*e2e-spec.js'],
+
+    jasmineNodeOpts: {
+        showColors: true
+    }
 };
